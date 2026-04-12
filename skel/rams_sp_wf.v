@@ -22,4 +22,13 @@ module rams_sp_wf (clk, we, en, addr, di, dout);
 	       dout <= RAM[addr];
 	  end
      end
+
+     // Initial RAM contents
+      integer i;
+      initial begin
+         for (i = 0; i < 1024; i = i + 1) begin
+            RAM[i] = 8'h00;
+         end
+      end
+
 endmodule
